@@ -1,0 +1,1 @@
+export { HotelInformationPage } from './HotelInformationPage'

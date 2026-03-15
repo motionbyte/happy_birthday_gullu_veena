@@ -1,0 +1,104 @@
+.section {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 5rem 1.5rem clamp(3rem, 8vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: transparent;
+}
+
+.jaipurTitle {
+  max-width: min(420px, 90vw);
+  width: 100%;
+  height: auto;
+  margin-top: clamp(2rem, 8vh, 4rem);
+  opacity: 0;
+  animation: fadeInDown 1s ease-out 0.2s forwards;
+}
+
+.jaipurTitle img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.section .contentInner {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contentInner {
+  max-width: 620px;
+  width: 100%;
+  text-align: center;
+}
+
+.contentInner p {
+  font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+  line-height: 1.8;
+  color: var(--warm);
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: slideUpFade 0.8s ease-out forwards;
+}
+
+.contentInner p:nth-of-type(1) {
+  animation-delay: 0.15s;
+}
+.contentInner p:nth-of-type(2) {
+  animation-delay: 0.35s;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--warm), transparent);
+  margin: 1.5rem auto;
+  opacity: 0.6;
+}
+
+.contentInner p:nth-of-type(3) {
+  animation-delay: 0.55s;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.withloveWrap {
+  margin-top: clamp(2rem, 5vw, 3rem);
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.85s forwards;
+}
+
+.withloveWrap img {
+  max-width: min(300px, 82vw);
+  height: auto;
+  display: inline-block;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.06));
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

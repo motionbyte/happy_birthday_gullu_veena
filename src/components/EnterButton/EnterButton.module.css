@@ -1,0 +1,41 @@
+.enterWrap {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  position: relative;
+  z-index: 10;
+}
+
+.enterWrap.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.enterBtn {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  border: none;
+  background: transparent;
+  padding: 0;
+  line-height: 0;
+  transition: transform 0.35s ease, filter 0.35s ease;
+  max-width: min(280px, 75vw);
+}
+
+.enterBtn img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.2));
+}
+
+.enterBtn:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 8px 32px rgba(201, 162, 39, 0.4));
+}
+
+.enterBtn:active {
+  transform: scale(0.98);
+}

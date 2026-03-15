@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jaipur — Happy Birthday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --sky: #cce0eb;
+      --sky-end: #e8d4d0;
+      --ink: #1a1a1a;
+      --warm: #2d2318;
+      --cream: #faf8f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      background: url('bg.png') repeat-y center top;
+      background-attachment: fixed;
+      background-size: 100% auto;
+      background-color: var(--cream);
+    }
+
+    /* ========== HEADER (sky + hamburger) ========== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: transparent;
+      transition: background 0.3s ease;
+    }
+
+    .header.scrolled {
+      background: rgba(204, 224, 235, 0.95);
+    }
+
+    .hamburger {
+      width: 44px;
+      height: 44px;
+      background: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .hamburger:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    .hamburger span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: #1a1a1a;
+      border-radius: 1px;
+    }
+
+    /* ========== SECTION 1 — Full screen: JAIPUR + content, background transparent ========== */
+    .top-section {
+      min-height: 100vh;
+      min-height: 100dvh;
+      padding: 5rem 1.5rem clamp(3rem, 8vw, 5rem);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background: transparent;
+    }
+
+    .jaipur-title {
+      max-width: min(420px, 90vw);
+      width: 100%;
+      height: auto;
+      margin-top: clamp(2rem, 8vh, 4rem);
+      opacity: 0;
+      animation: fadeInDown 1s ease-out 0.2s forwards;
+    }
+
+    .top-section .content-inner {
+      margin-top: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    .jaipur-title img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-inner {
+      max-width: 620px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .content-inner p {
+      font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+      line-height: 1.8;
+      color: var(--warm);
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      animation: slideUpFade 0.8s ease-out forwards;
+    }
+
+    .content-inner p:nth-of-type(1) { animation-delay: 0.15s; }
+    .content-inner p:nth-of-type(2) { animation-delay: 0.35s; }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--warm), transparent);
+      margin: 1.5rem auto;
+      opacity: 0.6;
+    }
+
+    .content-inner p:nth-of-type(3) { animation-delay: 0.55s; }
+
+    @keyframes slideUpFade {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .withlove-wrap {
+      margin-top: clamp(2rem, 5vw, 3rem);
+      opacity: 0;
+      animation: fadeIn 0.8s ease-out 0.85s forwards;
+    }
+
+    .withlove-wrap img {
+      max-width: min(300px, 82vw);
+      height: auto;
+      display: inline-block;
+      filter: drop-shadow(0 2px 10px rgba(0,0,0,0.06));
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* ========== SECTION 2 — Peacock parallax (50% move) + Enter button center ========== */
+    .peacock-section {
+      min-height: 100vh;
+      min-height: 100dvh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .peacock-parallax-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: url('frontbg.png') no-repeat center center;
+      background-size: cover;
+      will-change: transform;
+    }
+
+    .enter-wrap {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      position: relative;
+      z-index: 10;
+    }
+
+    .enter-wrap.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .enter-btn {
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      z-index: 10;
+      border: none;
+      background: transparent;
+      padding: 0;
+      line-height: 0;
+      transition: transform 0.35s ease, filter 0.35s ease;
+      max-width: min(280px, 75vw);
+    }
+
+    .enter-btn img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 4px 24px rgba(0,0,0,0.2));
+    }
+
+    .enter-btn:hover {
+      transform: scale(1.06);
+      filter: drop-shadow(0 8px 32px rgba(201, 162, 39, 0.4));
+    }
+
+    .enter-btn:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body style="position: relative;">
+  <header class="header" id="header">
+    <button type="button" class="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <section class="top-section">
+    <div class="jaipur-title">
+      <img src="jaipur.png" alt="Jaipur" />
+    </div>
+    <div class="content-inner">
+      <p>We're so happy you're coming to Jaipur to celebrate this special milestone with us. On this website, you'll find a little about Jaipur, our hotel, and a few nearby places you might like to explore if you're arriving early or staying on.</p>
+      <div class="divider" aria-hidden="true"></div>
+      <p>More than anything, we're simply looking forward to being together — family, dear friends, and our YPO community — in a place that means so much to us.</p>
+      <div class="withlove-wrap">
+        <img src="withlove.png" alt="With love ~ Gulu & Veena" />
+      </div>
+    </div>
+  </section>
+
+  <section class="peacock-section" id="peacockSection">
+    <div class="peacock-parallax-bg" id="peacockParallaxBg" aria-hidden="true"></div>
+    <div class="enter-wrap" id="enterWrap">
+      <a href="#" class="enter-btn" id="enterBtn" aria-label="Enter">
+        <img src="enterbutton.png" alt="Enter" />
+      </a>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var header = document.getElementById('header');
+      var enterWrap = document.getElementById('enterWrap');
+      var parallaxBg = document.getElementById('peacockParallaxBg');
+      var parallaxRate = 0.5;
+
+      function onScroll() {
+        if (header) header.classList.toggle('scrolled', window.scrollY > 80);
+        if (parallaxBg) {
+          var y = window.scrollY * parallaxRate;
+          parallaxBg.style.transform = 'translateY(' + y + 'px)';
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      if (enterWrap && 'IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) enterWrap.classList.add('revealed');
+          });
+        }, { root: null, rootMargin: '0px', threshold: 0.3 });
+        observer.observe(enterWrap);
+      } else if (enterWrap) {
+        enterWrap.classList.add('revealed');
+      }
+    })();
+  </script>
+</body>
+</html>

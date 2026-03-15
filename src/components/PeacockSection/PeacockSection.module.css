@@ -1,0 +1,17 @@
+.section {
+  /* min-height: 100vh; */
+  /* min-height: 100dvh; */
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* 1920px+: section tall enough so frontbg full height visible (100% width) */
+@media (min-width: 1920px) {
+  .section {
+    min-height: 130vw;
+  }
+}

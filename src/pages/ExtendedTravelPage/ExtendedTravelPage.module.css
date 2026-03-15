@@ -1,0 +1,25 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--cream);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding-top: max(2rem, env(safe-area-inset-top));
+  padding-bottom: clamp(2rem, 6vw, 4rem);
+}
+
+.pageTitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: var(--warm);
+  text-align: center;
+  margin: 0 0 clamp(2rem, 5vw, 3rem);
+  padding: clamp(2rem, 5vw, 3rem) clamp(1.25rem, 4vw, 2rem) 0;
+  letter-spacing: 0.02em;
+}

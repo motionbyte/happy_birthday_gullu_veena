@@ -1,0 +1,80 @@
+/* Theme variables */
+:root {
+  --sky: #cce0eb;
+  --sky-end: #e8d4d0;
+  --ink: #1a1a1a;
+  --warm: #2d2318;
+  --cream: #faf8f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Smooth scrolling (respect reduced-motion) */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+  /* End of scroll = end of document; no overscroll past footer */
+  overscroll-behavior-y: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Scrollbar: thin, theme-matched, aesthetic */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(45, 35, 24, 0.35) transparent;
+}
+
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: var(--ink);
+  overflow-x: hidden;
+  background: url('./assets/bg.png') repeat-y center top;
+  background-attachment: fixed;
+  background-size: 100% auto;
+  background-color: var(--cream);
+  position: relative;
+  padding-bottom: 0;
+  min-height: auto;
+}
+
+/* WebKit scrollbar (Chrome, Safari, Edge): narrow + theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(45, 35, 24, 0.28);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(45, 35, 24, 0.45);
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+  /* Document ends at credits section — no extra scroll below */
+  overflow-anchor: auto;
+}
+
+#root main {
+  position: relative;
+  flex: 1 0 auto;
+}
