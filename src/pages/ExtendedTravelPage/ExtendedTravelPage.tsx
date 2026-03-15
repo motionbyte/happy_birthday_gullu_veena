@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Header } from '@/components/Header'
 import { CreditsSection } from '@/components/CreditsSection'
+import { ItinerarySection } from './components/ItinerarySection'
 import { TravelSection } from './components/TravelSection'
 import { extendedTravelData } from './data/extendedTravelData'
 import styles from './ExtendedTravelPage.module.css'
@@ -32,6 +33,7 @@ export function ExtendedTravelPage() {
       <div className={styles.page}>
         <main className={styles.content}>
           <h1 className={styles.pageTitle}>Extended Travel</h1>
+          <ItinerarySection />
           {extendedTravelData.map((item) => (
             <TravelSection key={item.id} {...item} />
           ))}

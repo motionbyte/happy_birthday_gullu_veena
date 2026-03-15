@@ -1,0 +1,64 @@
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 2rem) clamp(2.5rem, 6vw, 4rem);
+}
+
+.title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.35rem, 3vw, 1.6rem);
+  font-weight: 700;
+  color: var(--warm);
+  margin: 0 0 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+.card {
+  background: rgba(250, 248, 245, 0.95);
+  border: 1px solid rgba(45, 35, 24, 0.1);
+  border-radius: 12px;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  box-shadow: 0 2px 16px rgba(45, 35, 24, 0.06);
+}
+
+.day {
+  margin-bottom: 1.25rem;
+}
+
+.day:last-child {
+  margin-bottom: 0;
+}
+
+.dayTitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.2rem);
+  font-weight: 600;
+  color: var(--warm);
+  margin: 0 0 0.4rem;
+}
+
+.dayItems {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.9vw, 1.05rem);
+  line-height: 1.6;
+  color: var(--warm);
+  opacity: 0.92;
+}
+
+.placeLink {
+  color: var(--warm);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 35, 24, 0.3);
+  font-weight: 500;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.placeLink:hover {
+  opacity: 0.85;
+  border-bottom-color: rgba(45, 35, 24, 0.5);
+}
+
+.placeLink:focus-visible {
+  outline: 2px solid var(--warm);
+  outline-offset: 2px;
+}
