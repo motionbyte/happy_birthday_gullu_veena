@@ -28,11 +28,6 @@ export function HomePage() {
     navigate('/extended-travel')
   }
 
-  const openMenu = () => {
-    setMenuOpen(true)
-    setModalOpen(false)
-  }
-
   return (
     <>
       <Header
