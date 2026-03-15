@@ -9,10 +9,14 @@ export function TravelSection({
   orientation,
   title,
   description,
+  suggestions,
   knowMoreUrl,
 }: TravelSectionProps) {
   const sectionClass = orientation === 'right' ? `${styles.section} ${styles.orientationRight}` : styles.section
   const titleId = `travel-title-${id}`
+
+  const getMapsUrl = (query: string) =>
+    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${query} ${title}`)}`
 
   return (
     <section className={sectionClass} aria-labelledby={titleId}>
@@ -28,6 +32,25 @@ export function TravelSection({
             <li key={i}>{line}</li>
           ))}
         </ul>
+        {suggestions && suggestions.length > 0 && (
+          <div className={styles.suggestionsWrap}>
+            <span className={styles.suggestionsLabel}>Hotel suggestions:</span>
+            <ul className={styles.suggestionsList}>
+              {suggestions.map((hotel, i) => (
+                <li key={i}>
+                  <a
+                    href={getMapsUrl(hotel)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.suggestionLink}
+                  >
+                    {hotel}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         {knowMoreUrl ? (
           <a href={knowMoreUrl} target="_blank" rel="noopener noreferrer" className={styles.knowMoreBtn}>
             Know More

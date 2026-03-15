@@ -66,6 +66,56 @@
   margin-bottom: 0;
 }
 
+.suggestionsWrap {
+  margin-top: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(45, 35, 24, 0.12);
+}
+
+.suggestionsLabel {
+  display: block;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  font-weight: 600;
+  color: var(--warm);
+  opacity: 0.9;
+  margin-bottom: 0.35rem;
+}
+
+.suggestionsList {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+  color: var(--warm);
+  opacity: 0.88;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  line-height: 1.5;
+}
+
+.suggestionsList li {
+  margin-bottom: 0.25rem;
+}
+
+.suggestionsList li:last-child {
+  margin-bottom: 0;
+}
+
+.suggestionLink {
+  color: var(--warm);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 35, 24, 0.25);
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.suggestionLink:hover {
+  opacity: 0.85;
+  border-bottom-color: rgba(45, 35, 24, 0.5);
+}
+
+.suggestionLink:focus-visible {
+  outline: 2px solid var(--warm);
+  outline-offset: 2px;
+}
+
 .knowMoreBtn {
   display: inline-flex;
   align-items: center;
