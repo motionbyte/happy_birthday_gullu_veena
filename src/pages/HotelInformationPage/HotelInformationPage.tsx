@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import page3Bg from '@/assets/page_3_bg.jpg'
 import { Header } from '@/components/Header'
@@ -10,6 +10,10 @@ const OBEROI_LINK = 'https://www.oberoihotels.com/hotels-in-jaipur-rajvilas-reso
 export function HotelInformationPage() {
   const navigate = useNavigate()
   const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const goToHotelInfo = () => {
     setMenuOpen(false)

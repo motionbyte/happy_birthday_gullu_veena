@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Header } from '@/components/Header'
 import { CreditsSection } from '@/components/CreditsSection'
@@ -9,6 +9,10 @@ import styles from './ExtendedTravelPage.module.css'
 export function ExtendedTravelPage() {
   const navigate = useNavigate()
   const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const goToHotelInfo = () => {
     setMenuOpen(false)
