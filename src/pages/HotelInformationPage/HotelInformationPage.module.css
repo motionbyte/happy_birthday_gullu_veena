@@ -61,7 +61,7 @@
 }
 
 .card p {
-  font-size: clamp(1rem, 2vw, 1.1rem);
+  font-size: clamp(1.25rem, 2.5vw, 1.4rem);
   line-height: 1.65;
   margin-bottom: 1rem;
 }
