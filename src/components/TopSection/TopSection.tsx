@@ -3,7 +3,7 @@ import withloveImg from '@/assets/withlove.png'
 import styles from './TopSection.module.css'
 
 const PARAGRAPH_1 =
-  "We are so happy to welcome you to Jaipur to celebrate this very special time with us. Having you there means more than we can say."
+  'Dearest friends and family, we are so happy to welcome you to Jaipur to celebrate this very special time with us. Having you there means more than we can say.'
 
 const PARAGRAPH_2 =
   "On this website, you'll find a little about Jaipur, details about our hotel, and a few nearby places you might enjoy exploring if you're arriving early or staying a little longer."
