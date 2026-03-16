@@ -32,6 +32,11 @@ export function Menu({ open, onClose, onHotelInfoClick, onExtendedTravelClick }:
     navigate('/extended-travel')
   }
 
+  const handleJaipurClick = () => {
+    onClose()
+    navigate('/')
+  }
+
   return (
     <Drawer
       anchor="right"
@@ -65,7 +70,17 @@ export function Menu({ open, onClose, onHotelInfoClick, onExtendedTravelClick }:
     >
       <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%', pt: 2, px: 1.5, pb: 2 }} role="presentation">
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 1, mb: 2 }}>
-          <Box component="img" src={jaipurImg} alt="Jaipur" sx={{ height: 36, width: 'auto', objectFit: 'contain' }} />
+          <Box
+            component="img"
+            src={jaipurImg}
+            alt="Jaipur"
+            role="button"
+            tabIndex={0}
+            onClick={handleJaipurClick}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleJaipurClick() } }}
+            sx={{ height: 36, width: 'auto', objectFit: 'contain', cursor: 'pointer' }}
+            aria-label="Go to home"
+          />
           <IconButton onClick={onClose} aria-label="Close menu" size="small" sx={{ ml: 0.5 }}>
             <CloseIcon />
           </IconButton>
