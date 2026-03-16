@@ -64,6 +64,6 @@ export const itineraryData: ItineraryDay[] = [
   },
   {
     day: 5,
-    items: ['Departure to Jaipur.'],
+    items: ['Sunrise at the Taj Mahal. Departure to Jaipur in the afternoon.'],
   },
 ]
