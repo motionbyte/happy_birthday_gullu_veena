@@ -17,8 +17,8 @@ export const extendedTravelData: ExtendedTravelItem[] = [
       'Modern Delhi: End the day in Connaught Place or Mehrauli, where boutique cafés and galleries blend seamlessly with history.',
     ],
     suggestions: [
-      { name: 'The Oberoi New Delhi', url: 'https://www.oberoihotels.com/hotels-in-delhi/' },
-      { name: 'Taj Dwarka', url: 'https://www.tajhotels.com/en-in/hotels/taj-dwarka-new-delhi/' },
+      { name: 'Hyatt Regency New Delhi', url: 'https://www.hyatt.com/en-US/hotel/india/hyatt-regency-delhi/delrd' },
+      { name: 'The Leela Palace New Delhi', url: 'https://www.theleela.com/the-leela-palace-new-delhi' },
     ],
   },
   {
