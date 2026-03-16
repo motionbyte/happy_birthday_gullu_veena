@@ -15,9 +15,6 @@ export function TravelSection({
   const sectionClass = orientation === 'right' ? `${styles.section} ${styles.orientationRight}` : styles.section
   const titleId = `travel-title-${id}`
 
-  const getMapsUrl = (query: string) =>
-    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${query} ${title}`)}`
-
   return (
     <section className={sectionClass} aria-labelledby={titleId}>
       <div className={styles.imageWrap}>
@@ -39,12 +36,12 @@ export function TravelSection({
               {suggestions.map((hotel, i) => (
                 <li key={i}>
                   <a
-                    href={getMapsUrl(hotel)}
+                    href={hotel.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.suggestionLink}
                   >
-                    {hotel}
+                    {hotel.name}
                   </a>
                 </li>
               ))}

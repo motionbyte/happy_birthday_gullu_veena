@@ -6,6 +6,6 @@ export type ExtendedTravelItem = {
   orientation: TravelSectionOrientation
   title: string
   description: string[]
-  suggestions?: string[]
+  suggestions?: { name: string; url: string }[]
   knowMoreUrl?: string
 }

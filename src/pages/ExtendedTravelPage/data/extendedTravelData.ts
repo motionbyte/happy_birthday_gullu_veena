@@ -16,7 +16,10 @@ export const extendedTravelData: ExtendedTravelItem[] = [
       'Cultural Touchpoints: Explore Lodhi Art District for its vibrant murals or visit Gandhi Smriti for a moment of reflection.',
       'Modern Delhi: End the day in Connaught Place or Mehrauli, where boutique cafés and galleries blend seamlessly with history.',
     ],
-    suggestions: ['The Oberoi New Delhi', 'Taj Dwarka'],
+    suggestions: [
+      { name: 'The Oberoi New Delhi', url: 'https://www.oberoihotels.com/hotels-in-delhi/' },
+      { name: 'Taj Dwarka', url: 'https://www.tajhotels.com/en-in/hotels/taj-dwarka-new-delhi/' },
+    ],
     knowMoreUrl: '',
   },
   {
@@ -30,7 +33,10 @@ export const extendedTravelData: ExtendedTravelItem[] = [
       'Itmad-ud-Daulah\'s Tomb: Often called the \'Baby Taj,\' this delicate marble mausoleum showcases intricate inlay work.',
       'Mehtab Bagh: Conclude with sunset views of the Taj Mahal from across the Yamuna River, a perfect photo opportunity.',
     ],
-    suggestions: ['Oberoi Amar Villas', 'ITC Mughal'],
+    suggestions: [
+      { name: 'Oberoi Amar Villas', url: 'https://www.oberoihotels.com/hotels-in-agra/' },
+      { name: 'ITC Mughal', url: 'https://www.itchotels.com/in/en/itc-mughal-agra' },
+    ],
     knowMoreUrl: '',
   },
   {
@@ -45,7 +51,10 @@ export const extendedTravelData: ExtendedTravelItem[] = [
       'Rao Jodha Desert Rock Park: A scenic walk through restored desert landscapes beneath the fort\'s ramparts.',
       'Umaid Bhawan Palace museum: the residence to the Royals.',
     ],
-    suggestions: ['Taj Umaid Bhawan Palace', 'Taj Hari Mahal'],
+    suggestions: [
+      { name: 'Taj Umaid Bhawan Palace', url: 'https://www.tajhotels.com/en-in/hotels/umaid-bhawan-palace-jodhpur/' },
+      { name: 'Taj Hari Mahal', url: 'https://www.tajhotels.com/en-in/hotels/taj-hari-mahal-jodhpur/' },
+    ],
     knowMoreUrl: '',
   },
   {
@@ -60,7 +69,11 @@ export const extendedTravelData: ExtendedTravelItem[] = [
       'Saheliyon-ki-Bari: A peaceful garden built for royal maidens, featuring fountains and marble pavilions.',
       'Local Markets: Browse for miniature paintings, silver jewelry, and handwoven textiles in the old city lanes.',
     ],
-    suggestions: ['Taj Lake Palace', 'Leela Palace', 'Trident'],
+    suggestions: [
+      { name: 'Taj Lake Palace', url: 'https://www.tajhotels.com/en-in/hotels/taj-lake-palace-udaipur/' },
+      { name: 'Leela Palace', url: 'https://www.theleela.com/hotels-in-udaipur/the-leela-palace-udaipur/' },
+      { name: 'Trident', url: 'https://www.tridenthotels.com/hotels-in-udaipur/' },
+    ],
     knowMoreUrl: '',
   },
 ]
