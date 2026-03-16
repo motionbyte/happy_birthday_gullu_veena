@@ -119,37 +119,6 @@
   outline-offset: 2px;
 }
 
-.knowMoreBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  align-self: flex-start;
-  margin-top: 0.5rem;
-  padding: 0.6rem 1.25rem;
-  border: none;
-  border-radius: 8px;
-  background: #c9a227;
-  color: #2d2318;
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 2px 8px rgba(201, 162, 39, 0.3);
-}
-
-.knowMoreBtn:hover {
-  background: #b8860b;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(201, 162, 39, 0.35);
-}
-
-.knowMoreBtn:focus-visible {
-  outline: 2px solid var(--warm);
-  outline-offset: 2px;
-}
-
 @media (max-width: 768px) {
   .section {
     grid-template-columns: 1fr;

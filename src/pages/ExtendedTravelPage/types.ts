@@ -7,5 +7,4 @@ export type ExtendedTravelItem = {
   title: string
   description: string[]
   suggestions?: { name: string; url: string }[]
-  knowMoreUrl?: string
 }

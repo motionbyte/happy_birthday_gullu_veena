@@ -20,7 +20,6 @@ export const extendedTravelData: ExtendedTravelItem[] = [
       { name: 'The Oberoi New Delhi', url: 'https://www.oberoihotels.com/hotels-in-delhi/' },
       { name: 'Taj Dwarka', url: 'https://www.tajhotels.com/en-in/hotels/taj-dwarka-new-delhi/' },
     ],
-    knowMoreUrl: '',
   },
   {
     id: 'agra',
@@ -37,7 +36,6 @@ export const extendedTravelData: ExtendedTravelItem[] = [
       { name: 'Oberoi Amar Villas', url: 'https://www.oberoihotels.com/hotels-in-agra/' },
       { name: 'ITC Mughal', url: 'https://www.itchotels.com/in/en/itc-mughal-agra' },
     ],
-    knowMoreUrl: '',
   },
   {
     id: 'jodhpur',
@@ -55,7 +53,6 @@ export const extendedTravelData: ExtendedTravelItem[] = [
       { name: 'Taj Umaid Bhawan Palace', url: 'https://www.tajhotels.com/en-in/hotels/umaid-bhawan-palace-jodhpur/' },
       { name: 'Taj Hari Mahal', url: 'https://www.tajhotels.com/en-in/hotels/taj-hari-mahal-jodhpur/' },
     ],
-    knowMoreUrl: '',
   },
   {
     id: 'udaipur',
@@ -74,6 +71,5 @@ export const extendedTravelData: ExtendedTravelItem[] = [
       { name: 'Leela Palace', url: 'https://www.theleela.com/hotels-in-udaipur/the-leela-palace-udaipur/' },
       { name: 'Trident', url: 'https://www.tridenthotels.com/hotels-in-udaipur/' },
     ],
-    knowMoreUrl: '',
   },
 ]

@@ -10,7 +10,6 @@ export function TravelSection({
   title,
   description,
   suggestions,
-  knowMoreUrl,
 }: TravelSectionProps) {
   const sectionClass = orientation === 'right' ? `${styles.section} ${styles.orientationRight}` : styles.section
   const titleId = `travel-title-${id}`
@@ -47,15 +46,6 @@ export function TravelSection({
               ))}
             </ul>
           </div>
-        )}
-        {knowMoreUrl ? (
-          <a href={knowMoreUrl} target="_blank" rel="noopener noreferrer" className={styles.knowMoreBtn}>
-            Know More
-          </a>
-        ) : (
-          <span className={styles.knowMoreBtn} aria-hidden>
-            Know More
-          </span>
         )}
       </div>
     </section>
