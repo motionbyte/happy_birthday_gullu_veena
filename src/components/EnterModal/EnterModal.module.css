@@ -122,6 +122,16 @@
   animation: contentIn 0.5s ease-out 0.35s forwards;
 }
 
+.dates {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  color: var(--warm);
+  opacity: 0.85;
+  margin: 0.25rem 0 0;
+  opacity: 0;
+  animation: contentIn 0.5s ease-out 0.4s forwards;
+}
+
 .subtitle {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: clamp(0.95rem, 2.2vw, 1.05rem);

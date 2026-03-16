@@ -12,6 +12,7 @@ export type EnterModalProps = {
 }
 
 const TITLE = 'Welcome to Jaipur'
+const EVENT_DATES = 'Monday 26 October – 29 October'
 const SUBTITLE = 'Choose where you’d like to begin'
 
 export function EnterModal({ open, onClose, onHotelInfo, onExtendedTravel }: EnterModalProps) {
@@ -69,6 +70,7 @@ export function EnterModal({ open, onClose, onHotelInfo, onExtendedTravel }: Ent
         </button>
         <ModalFrame>
           <h2 id="enter-modal-title" className={styles.title}>{TITLE}</h2>
+          <p className={styles.dates}>{EVENT_DATES}</p>
           <p className={styles.subtitle}>{SUBTITLE}</p>
           <div className={styles.buttons}>
             <button type="button" className={styles.optionBtn} onClick={handleHotel}>
