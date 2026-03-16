@@ -33,7 +33,6 @@ export const extendedTravelData: ExtendedTravelItem[] = [
       'Mehtab Bagh: Conclude with sunset views of the Taj Mahal from across the Yamuna River, a perfect photo opportunity.',
     ],
     suggestions: [
-      { name: 'Oberoi Amar Villas', url: 'https://www.oberoihotels.com/hotels-in-agra/' },
       { name: 'ITC Mughal', url: 'https://www.itchotels.com/in/en/itc-mughal-agra' },
     ],
   },
@@ -50,7 +49,7 @@ export const extendedTravelData: ExtendedTravelItem[] = [
       'Umaid Bhawan Palace museum: the residence to the Royals.',
     ],
     suggestions: [
-      { name: 'Taj Umaid Bhawan Palace', url: 'https://www.tajhotels.com/en-in/hotels/umaid-bhawan-palace-jodhpur/' },
+      { name: 'RAAS Jodhpur', url: 'https://www.raashotels.com/jodhpur/' },
       { name: 'Taj Hari Mahal', url: 'https://www.tajhotels.com/en-in/hotels/taj-hari-mahal-jodhpur/' },
     ],
   },
