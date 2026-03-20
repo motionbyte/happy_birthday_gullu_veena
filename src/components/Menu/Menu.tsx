@@ -5,7 +5,7 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import IconButton from '@mui/material/IconButton'
-import { Hotel as HotelIcon, Map as MapIcon, Close as CloseIcon } from '@mui/icons-material'
+import { Hotel as HotelIcon, Map as MapIcon, MailOutline as MailIcon, Close as CloseIcon } from '@mui/icons-material'
 import { Box } from '@mui/material'
 import jaipurImg from '@/assets/jaipur.png'
 
@@ -14,11 +14,12 @@ export type MenuProps = {
   onClose: () => void
   onHotelInfoClick?: () => void
   onExtendedTravelClick?: () => void
+  onMessageUsClick?: () => void
 }
 
 const DRAWER_WIDTH = 280
 
-export function Menu({ open, onClose, onHotelInfoClick, onExtendedTravelClick }: MenuProps) {
+export function Menu({ open, onClose, onHotelInfoClick, onExtendedTravelClick, onMessageUsClick }: MenuProps) {
   const navigate = useNavigate()
 
   const handleHotelClick = () => {
@@ -35,6 +36,12 @@ export function Menu({ open, onClose, onHotelInfoClick, onExtendedTravelClick }:
   const handleJaipurClick = () => {
     onClose()
     navigate('/')
+  }
+
+  const handleMessageClick = () => {
+    onClose()
+    onMessageUsClick?.()
+    navigate('/message-us')
   }
 
   return (
@@ -116,6 +123,21 @@ export function Menu({ open, onClose, onHotelInfoClick, onExtendedTravelClick }:
               <MapIcon sx={{ color: 'primary.main' }} />
             </ListItemIcon>
             <ListItemText primary="Extended Travel" primaryTypographyProps={{ fontWeight: 500 }} />
+          </ListItemButton>
+          <ListItemButton
+            onClick={handleMessageClick}
+            sx={{
+              borderRadius: 2,
+              mx: 1,
+              '&:hover': {
+                backgroundColor: 'rgba(45, 35, 24, 0.08)',
+              },
+            }}
+          >
+            <ListItemIcon sx={{ minWidth: 40 }}>
+              <MailIcon sx={{ color: 'primary.main' }} />
+            </ListItemIcon>
+            <ListItemText primary="Message to Us" primaryTypographyProps={{ fontWeight: 500 }} />
           </ListItemButton>
         </List>
       </Box>

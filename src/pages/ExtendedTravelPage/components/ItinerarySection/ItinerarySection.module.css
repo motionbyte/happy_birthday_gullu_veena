@@ -62,3 +62,73 @@
   outline: 2px solid var(--warm);
   outline-offset: 2px;
 }
+
+.assistanceCard {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 1px solid rgba(45, 35, 24, 0.14);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(250, 248, 245, 0.8), rgba(232, 212, 208, 0.45));
+  box-shadow: 0 4px 14px rgba(45, 35, 24, 0.08);
+}
+
+.assistanceTag {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(45, 35, 24, 0.75);
+  background: rgba(45, 35, 24, 0.08);
+  border-radius: 999px;
+  padding: 0.22rem 0.6rem;
+}
+
+.assistanceTitle {
+  margin: 0 0 0.4rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  color: var(--warm);
+}
+
+.assistanceText {
+  margin: 0;
+  color: var(--warm);
+  opacity: 0.88;
+}
+
+.assistanceName {
+  margin: 0.5rem 0 0.75rem;
+  color: var(--warm);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.assistanceActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.assistanceLink {
+  display: inline-block;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(45, 35, 24, 0.25);
+  background: rgba(250, 248, 245, 0.92);
+  color: var(--warm);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.assistanceLink:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(45, 35, 24, 0.12);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.whatsappLink {
+  border-color: rgba(28, 128, 79, 0.35);
+  color: #1c804f;
+}

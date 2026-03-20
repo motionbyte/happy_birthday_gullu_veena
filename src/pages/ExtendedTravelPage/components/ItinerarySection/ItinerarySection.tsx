@@ -3,6 +3,10 @@ import { itineraryData } from '../../data/itineraryData'
 import styles from './ItinerarySection.module.css'
 
 const SECTION_TITLE = 'Possible itinerary for Guests'
+const ASSISTANCE_NAME = 'Sakcti Singh Manidhar'
+const ASSISTANCE_PHONE_DISPLAY = '+91 91668 02607'
+const ASSISTANCE_PHONE_LINK = 'tel:+919166802607'
+const ASSISTANCE_WHATSAPP_LINK = 'https://wa.me/919166802607'
 
 function getMapsUrl(query: string): string {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`
@@ -40,6 +44,27 @@ export function ItinerarySection() {
             </p>
           </div>
         ))}
+        <div className={styles.assistanceCard}>
+          <span className={styles.assistanceTag}>Travel support</span>
+          <h3 className={styles.assistanceTitle}>Further travel assistance</h3>
+          <p className={styles.assistanceText}>
+            For bookings, on-ground guidance, or planning support, please connect with:
+          </p>
+          <p className={styles.assistanceName}>{ASSISTANCE_NAME}</p>
+          <div className={styles.assistanceActions}>
+            <a href={ASSISTANCE_PHONE_LINK} className={styles.assistanceLink}>
+              Call: {ASSISTANCE_PHONE_DISPLAY}
+            </a>
+            <a
+              href={ASSISTANCE_WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.assistanceLink} ${styles.whatsappLink}`}
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   )

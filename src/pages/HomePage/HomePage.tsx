@@ -28,6 +28,12 @@ export function HomePage() {
     navigate('/extended-travel')
   }
 
+  const goToMessageUs = () => {
+    setModalOpen(false)
+    setMenuOpen(false)
+    navigate('/message-us')
+  }
+
   return (
     <>
       <Header
@@ -36,6 +42,7 @@ export function HomePage() {
         onMenuClose={() => setMenuOpen(false)}
         onHotelInfoClick={goToHotelInfo}
         onExtendedTravelClick={() => { setMenuOpen(false) }}
+        onMessageUsClick={goToMessageUs}
       />
       <main>
         <TopSection />
@@ -50,6 +57,7 @@ export function HomePage() {
         onClose={() => setModalOpen(false)}
         onHotelInfo={goToHotelInfo}
         onExtendedTravel={goToExtendedTravel}
+        onMessageUs={goToMessageUs}
       />
     </>
   )

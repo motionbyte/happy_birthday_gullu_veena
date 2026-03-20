@@ -20,6 +20,16 @@ export function ExtendedTravelPage() {
     navigate('/hotel-information')
   }
 
+  const goToExtendedTravel = () => {
+    setMenuOpen(false)
+    navigate('/extended-travel')
+  }
+
+  const goToMessageUs = () => {
+    setMenuOpen(false)
+    navigate('/message-us')
+  }
+
   return (
     <>
       <Header
@@ -27,7 +37,8 @@ export function ExtendedTravelPage() {
         onMenuOpen={() => setMenuOpen(true)}
         onMenuClose={() => setMenuOpen(false)}
         onHotelInfoClick={goToHotelInfo}
-        onExtendedTravelClick={() => setMenuOpen(false)}
+        onExtendedTravelClick={goToExtendedTravel}
+        onMessageUsClick={goToMessageUs}
         onBackClick={() => navigate('/')}
       />
       <div className={styles.page}>

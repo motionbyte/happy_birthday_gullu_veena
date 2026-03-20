@@ -9,10 +9,11 @@ export type HeaderProps = {
   onMenuClose: () => void
   onHotelInfoClick?: () => void
   onExtendedTravelClick?: () => void
+  onMessageUsClick?: () => void
   onBackClick?: () => void
 }
 
-export function Header({ menuOpen, onMenuOpen, onMenuClose, onHotelInfoClick, onExtendedTravelClick, onBackClick }: HeaderProps) {
+export function Header({ menuOpen, onMenuOpen, onMenuClose, onHotelInfoClick, onExtendedTravelClick, onMessageUsClick, onBackClick }: HeaderProps) {
   const headerRef = useHeaderScroll(styles.scrolled)
 
   return (
@@ -47,6 +48,7 @@ export function Header({ menuOpen, onMenuOpen, onMenuClose, onHotelInfoClick, on
         onClose={onMenuClose}
         onHotelInfoClick={onHotelInfoClick}
         onExtendedTravelClick={onExtendedTravelClick}
+        onMessageUsClick={onMessageUsClick}
       />
     </>
   )

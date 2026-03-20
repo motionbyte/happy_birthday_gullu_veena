@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { ModalFrame } from './ModalFrame'
-import { Hotel as HotelIcon, Map as MapIcon, Close as CloseIcon } from '@mui/icons-material'
+import { Hotel as HotelIcon, Map as MapIcon, MailOutline as MailIcon, Close as CloseIcon } from '@mui/icons-material'
 import styles from './EnterModal.module.css'
 
 export type EnterModalProps = {
@@ -9,13 +9,14 @@ export type EnterModalProps = {
   onClose: () => void
   onHotelInfo?: () => void
   onExtendedTravel?: () => void
+  onMessageUs?: () => void
 }
 
 const TITLE = 'Welcome to Jaipur'
 const EVENT_DATES = 'Monday 26 October – 29 October'
 const SUBTITLE = 'Choose where you’d like to begin'
 
-export function EnterModal({ open, onClose, onHotelInfo, onExtendedTravel }: EnterModalProps) {
+export function EnterModal({ open, onClose, onHotelInfo, onExtendedTravel, onMessageUs }: EnterModalProps) {
   useEffect(() => {
     if (open) {
       const prev = document.body.style.overflow
@@ -46,6 +47,11 @@ export function EnterModal({ open, onClose, onHotelInfo, onExtendedTravel }: Ent
 
   const handleTravel = () => {
     onExtendedTravel?.()
+    onClose()
+  }
+
+  const handleMessageUs = () => {
+    onMessageUs?.()
     onClose()
   }
 
@@ -84,6 +90,12 @@ export function EnterModal({ open, onClose, onHotelInfo, onExtendedTravel }: Ent
                 <MapIcon sx={{ fontSize: 22 }} />
               </span>
               Extended Travel
+            </button>
+            <button type="button" className={styles.optionBtn} onClick={handleMessageUs}>
+              <span className={styles.iconWrap}>
+                <MailIcon sx={{ fontSize: 22 }} />
+              </span>
+              Message to Us
             </button>
           </div>
         </ModalFrame>

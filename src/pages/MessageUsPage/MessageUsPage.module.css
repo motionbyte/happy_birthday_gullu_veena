@@ -1,0 +1,139 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 4vw, 2rem);
+  padding-top: max(2rem, env(safe-area-inset-top));
+  display: flex;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(232, 212, 208, 0.62), transparent 42%),
+    radial-gradient(circle at 82% 86%, rgba(204, 224, 235, 0.7), transparent 45%),
+    url('../../assets/extended_travel_paisley.svg');
+  background-size: auto, auto, 300px 300px;
+  background-position: center, center, center;
+  background-repeat: no-repeat, no-repeat, repeat;
+}
+
+.page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(250, 248, 245, 0.2), rgba(250, 248, 245, 0.46));
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 720px;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.9rem, 5vw, 2.5rem);
+  color: var(--warm);
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+
+.subtitle {
+  color: var(--warm);
+  opacity: 0.9;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background: rgba(250, 248, 245, 0.9);
+  border: 1px solid rgba(45, 35, 24, 0.16);
+  border-radius: 16px;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 8px 24px rgba(45, 35, 24, 0.12);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.fieldWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.label {
+  font-size: 0.95rem;
+  color: var(--warm);
+  font-weight: 600;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(45, 35, 24, 0.25);
+  border-radius: 8px;
+  padding: 0.7rem 0.8rem;
+  background: #fff;
+  color: #2d2318;
+  font-size: 0.98rem;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: 2px solid rgba(45, 35, 24, 0.3);
+  outline-offset: 1px;
+}
+
+.errorInput {
+  border-color: #b83333;
+}
+
+.errorText {
+  color: #b83333;
+  font-size: 0.85rem;
+}
+
+.status {
+  min-height: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.success {
+  color: #1d7a34;
+}
+
+.failure {
+  color: #b83333;
+}
+
+.submitBtn {
+  border: 1px solid rgba(45, 35, 24, 0.3);
+  border-radius: 9px;
+  background: rgba(45, 35, 24, 0.95);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.submitBtn:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.submitBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}

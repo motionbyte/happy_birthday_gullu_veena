@@ -5,6 +5,7 @@ import { PasswordGate } from '@/components/PasswordGate'
 import { HomePage } from '@/pages/HomePage'
 import { HotelInformationPage } from '@/pages/HotelInformationPage'
 import { ExtendedTravelPage } from '@/pages/ExtendedTravelPage'
+import { MessageUsPage } from '@/pages/MessageUsPage'
 
 const SESSION_KEY = 'site_access'
 
@@ -41,6 +42,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/hotel-information" element={<HotelInformationPage />} />
           <Route path="/extended-travel" element={<ExtendedTravelPage />} />
+          <Route path="/message-us" element={<MessageUsPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
