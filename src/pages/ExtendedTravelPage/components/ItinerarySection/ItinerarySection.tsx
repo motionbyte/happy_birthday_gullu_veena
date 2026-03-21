@@ -16,10 +16,11 @@ function renderItem(item: ItineraryDayItem, index: number) {
   if (typeof item === 'string') {
     return <span key={index}>{item}</span>
   }
+  const href = 'url' in item ? item.url : getMapsUrl(item.mapsQuery)
   return (
     <a
       key={index}
-      href={getMapsUrl(item.mapsQuery)}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={styles.placeLink}

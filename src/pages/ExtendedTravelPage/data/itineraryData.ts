@@ -1,6 +1,7 @@
 export type ItineraryDayItem =
   | string
   | { text: string; mapsQuery: string }
+  | { text: string; url: string }
 
 export type ItineraryDay = {
   day: number
@@ -13,9 +14,15 @@ export const itineraryData: ItineraryDay[] = [
     items: [
       'Arrival in New Delhi.',
       'Hotel options suggested: ',
-      { text: 'The Oberoi New Delhi', mapsQuery: 'The Oberoi New Delhi Delhi' },
+      {
+        text: 'Hyatt Regency New Delhi',
+        url: 'https://www.hyatt.com/en-US/hotel/india/hyatt-regency-delhi/delrd',
+      },
       ' / ',
-      { text: 'Taj Dwarka', mapsQuery: 'Taj Dwarka New Delhi' },
+      {
+        text: 'The Leela Palace New Delhi',
+        url: 'https://www.theleela.com/the-leela-palace-new-delhi',
+      },
       '.',
     ],
   },

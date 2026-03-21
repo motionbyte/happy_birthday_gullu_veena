@@ -60,17 +60,19 @@ export function Menu({ open, onClose, onHotelInfoClick, onExtendedTravelClick, o
             top: 0,
             borderTopLeftRadius: 12,
             borderBottomLeftRadius: 12,
-            boxShadow: '-4px 0 24px rgba(0,0,0,0.08)',
-            backgroundColor: 'rgba(255, 255, 255, 0.377)',
-            backdropFilter: 'blur(14px)',
-            WebkitBackdropFilter: 'blur(14px)',
+            boxShadow: '-4px 0 28px rgba(45, 35, 24, 0.1)',
+            /* Pastel sky blue glass — matches site --sky feel */
+            backgroundColor: 'rgba(204, 224, 235, 0.55)',
+            borderLeft: '1px solid rgba(255, 255, 255, 0.55)',
+            backdropFilter: 'blur(16px)',
+            WebkitBackdropFilter: 'blur(16px)',
           },
         },
         backdrop: {
           sx: {
-            backgroundColor: 'rgba(0,0,0,0.18)',
-            backdropFilter: 'blur(4px)',
-            WebkitBackdropFilter: 'blur(4px)',
+            backgroundColor: 'rgba(120, 150, 170, 0.22)',
+            backdropFilter: 'blur(5px)',
+            WebkitBackdropFilter: 'blur(5px)',
           },
         },
       }}
@@ -88,7 +90,7 @@ export function Menu({ open, onClose, onHotelInfoClick, onExtendedTravelClick, o
             sx={{ height: 36, width: 'auto', objectFit: 'contain', cursor: 'pointer' }}
             aria-label="Go to home"
           />
-          <IconButton onClick={onClose} aria-label="Close menu" size="small" sx={{ ml: 0.5 }}>
+          <IconButton onClick={onClose} aria-label="Close menu" size="small" sx={{ ml: 0.5, color: '#3d5a6e' }}>
             <CloseIcon />
           </IconButton>
         </Box>
@@ -99,45 +101,48 @@ export function Menu({ open, onClose, onHotelInfoClick, onExtendedTravelClick, o
               borderRadius: 2,
               mx: 1,
               mb: 0.5,
+              color: 'var(--warm)',
               '&:hover': {
-                backgroundColor: 'rgba(45, 35, 24, 0.08)',
+                backgroundColor: 'rgba(255, 255, 255, 0.45)',
               },
             }}
           >
             <ListItemIcon sx={{ minWidth: 40 }}>
-              <HotelIcon sx={{ color: 'primary.main' }} />
+              <HotelIcon sx={{ color: '#3d5a6e' }} />
             </ListItemIcon>
-            <ListItemText primary="Hotel Information" primaryTypographyProps={{ fontWeight: 500 }} />
+            <ListItemText primary="Hotel Information" primaryTypographyProps={{ fontWeight: 500, color: 'var(--warm)' }} />
           </ListItemButton>
           <ListItemButton
             onClick={handleTravelClick}
             sx={{
               borderRadius: 2,
               mx: 1,
+              color: 'var(--warm)',
               '&:hover': {
-                backgroundColor: 'rgba(45, 35, 24, 0.08)',
+                backgroundColor: 'rgba(255, 255, 255, 0.45)',
               },
             }}
           >
             <ListItemIcon sx={{ minWidth: 40 }}>
-              <MapIcon sx={{ color: 'primary.main' }} />
+              <MapIcon sx={{ color: '#3d5a6e' }} />
             </ListItemIcon>
-            <ListItemText primary="Extended Travel" primaryTypographyProps={{ fontWeight: 500 }} />
+            <ListItemText primary="Extended Travel" primaryTypographyProps={{ fontWeight: 500, color: 'var(--warm)' }} />
           </ListItemButton>
           <ListItemButton
             onClick={handleMessageClick}
             sx={{
               borderRadius: 2,
               mx: 1,
+              color: 'var(--warm)',
               '&:hover': {
-                backgroundColor: 'rgba(45, 35, 24, 0.08)',
+                backgroundColor: 'rgba(255, 255, 255, 0.45)',
               },
             }}
           >
             <ListItemIcon sx={{ minWidth: 40 }}>
-              <MailIcon sx={{ color: 'primary.main' }} />
+              <MailIcon sx={{ color: '#3d5a6e' }} />
             </ListItemIcon>
-            <ListItemText primary="Message to Us" primaryTypographyProps={{ fontWeight: 500 }} />
+            <ListItemText primary="Message to Us" primaryTypographyProps={{ fontWeight: 500, color: 'var(--warm)' }} />
           </ListItemButton>
         </List>
       </Box>

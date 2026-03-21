@@ -2,25 +2,26 @@
   position: relative;
   min-height: 100vh;
   width: 100%;
+  overflow-x: hidden;
   padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 4vw, 2rem);
   padding-top: max(2rem, env(safe-area-inset-top));
   display: flex;
   justify-content: center;
-  background:
-    radial-gradient(circle at 18% 12%, rgba(232, 212, 208, 0.62), transparent 42%),
-    radial-gradient(circle at 82% 86%, rgba(204, 224, 235, 0.7), transparent 45%),
-    url('../../assets/extended_travel_paisley.svg');
-  background-size: auto, auto, 300px 300px;
-  background-position: center, center, center;
-  background-repeat: no-repeat, no-repeat, repeat;
-}
-
-.page::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(250, 248, 245, 0.2), rgba(250, 248, 245, 0.46));
-  pointer-events: none;
+  /* Same as Extended Travel: pastel sky + block print */
+  background-color: #b9d4e3;
+  background-image:
+    linear-gradient(
+      165deg,
+      rgba(204, 224, 235, 0.92) 0%,
+      rgba(185, 210, 225, 0.55) 45%,
+      rgba(232, 212, 208, 0.28) 100%
+    ),
+    radial-gradient(ellipse 90% 70% at 10% 0%, rgba(230, 240, 248, 0.55), transparent 50%),
+    radial-gradient(ellipse 75% 65% at 95% 100%, rgba(200, 218, 230, 0.5), transparent 52%),
+    url('../../assets/extended_travel_block_print.svg');
+  background-size: auto, auto, auto, min(360px, 42vw) min(360px, 42vw);
+  background-position: center, top left, bottom right, center;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
 }
 
 .content {

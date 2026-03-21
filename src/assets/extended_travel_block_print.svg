@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Cool pastel paper — blends with sky-blue page -->
+  <rect width="200" height="200" fill="#c5d8e4"/>
+  <defs>
+    <symbol id="blockButa" viewBox="-14 -22 28 44">
+      <g stroke="#2d2318" stroke-width="0.35" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M0 16 Q0 6 0-6" stroke="#5a6e4e" stroke-width="1.1" fill="none"/>
+        <path d="M0-6 L-5-12 Q0-16 5-12 Z" fill="#3d5a8a"/>
+        <path d="M0-6 L-7-8 Q-3-14-5-12 Z" fill="#4a6fa5"/>
+        <path d="M0-6 L7-8 Q3-14 5-12 Z" fill="#4a6fa5"/>
+        <circle cx="0" cy="-8" r="1.4" fill="#2d3d5c" stroke="none"/>
+        <path d="M-4 2 Q-9 0-7-4 Q-5 0-4 2" fill="#7a8f6a" stroke="#4a5c42" stroke-width="0.25"/>
+        <path d="M4 2 Q9 0 7-4 Q5 0 4 2" fill="#7a8f6a" stroke="#4a5c42" stroke-width="0.25"/>
+        <path d="M-3 10 Q-6 16-2 20 Q2 16-3 10" fill="#6b7c5c" stroke="#4a5c42" stroke-width="0.25"/>
+        <path d="M3 10 Q6 16 2 20 Q-2 16 3 10" fill="#6b7c5c" stroke="#4a5c42" stroke-width="0.25"/>
+      </g>
+    </symbol>
+  </defs>
+
+  <!-- Staggered brick layout -->
+  <use href="#blockButa" width="34" height="52" x="8" y="18"/>
+  <use href="#blockButa" width="34" height="52" x="82" y="22"/>
+  <use href="#blockButa" width="34" height="52" x="156" y="18"/>
+
+  <use href="#blockButa" width="34" height="52" x="45" y="88"/>
+  <use href="#blockButa" width="34" height="52" x="118" y="92"/>
+
+  <use href="#blockButa" width="34" height="52" x="8" y="158"/>
+  <use href="#blockButa" width="34" height="52" x="82" y="162"/>
+  <use href="#blockButa" width="34" height="52" x="156" y="158"/>
+
+  <g fill="#5c7eb8" opacity="0.88">
+    <circle cx="38" cy="58" r="2"/>
+    <circle cx="142" cy="48" r="1.8"/>
+    <circle cx="188" cy="118" r="2"/>
+    <circle cx="24" cy="132" r="1.8"/>
+  </g>
+</svg>
