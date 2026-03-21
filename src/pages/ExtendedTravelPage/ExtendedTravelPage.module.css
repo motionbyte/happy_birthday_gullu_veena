@@ -16,7 +16,8 @@
     radial-gradient(ellipse 75% 65% at 95% 100%, rgba(200, 218, 230, 0.5), transparent 52%),
     url('../../assets/extended_travel_block_print.svg');
   /* Larger tile = bigger block-print motif */
-  background-size: auto, auto, auto, min(360px, 42vw) min(360px, 42vw);
+  /* 2× larger motif tile vs previous */
+  background-size: auto, auto, auto, min(720px, 84vw) min(720px, 84vw);
   background-position: center, top left, bottom right, center;
   background-repeat: no-repeat, no-repeat, no-repeat, repeat;
 }
