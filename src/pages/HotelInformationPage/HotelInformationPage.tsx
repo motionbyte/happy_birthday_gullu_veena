@@ -20,6 +20,11 @@ export function HotelInformationPage() {
     navigate('/hotel-information')
   }
 
+  const goToItinerary = () => {
+    setMenuOpen(false)
+    navigate('/itinerary')
+  }
+
   const goToExtendedTravel = () => {
     setMenuOpen(false)
     navigate('/extended-travel')
@@ -37,6 +42,7 @@ export function HotelInformationPage() {
         onMenuOpen={() => setMenuOpen(true)}
         onMenuClose={() => setMenuOpen(false)}
         onHotelInfoClick={goToHotelInfo}
+        onItineraryClick={goToItinerary}
         onExtendedTravelClick={goToExtendedTravel}
         onMessageUsClick={goToMessageUs}
         onBackClick={() => navigate('/')}

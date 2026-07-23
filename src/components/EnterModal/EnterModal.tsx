@@ -1,13 +1,20 @@
 import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { ModalFrame } from './ModalFrame'
-import { Hotel as HotelIcon, Map as MapIcon, MailOutline as MailIcon, Close as CloseIcon } from '@mui/icons-material'
+import {
+  Hotel as HotelIcon,
+  Map as MapIcon,
+  MailOutline as MailIcon,
+  AutoStories as ItineraryIcon,
+  Close as CloseIcon,
+} from '@mui/icons-material'
 import styles from './EnterModal.module.css'
 
 export type EnterModalProps = {
   open: boolean
   onClose: () => void
   onHotelInfo?: () => void
+  onItinerary?: () => void
   onExtendedTravel?: () => void
   onMessageUs?: () => void
 }
@@ -16,7 +23,14 @@ const TITLE = 'Welcome to Jaipur'
 const EVENT_DATES = 'Monday 26 October – 29 October'
 const SUBTITLE = 'Choose where you’d like to begin'
 
-export function EnterModal({ open, onClose, onHotelInfo, onExtendedTravel, onMessageUs }: EnterModalProps) {
+export function EnterModal({
+  open,
+  onClose,
+  onHotelInfo,
+  onItinerary,
+  onExtendedTravel,
+  onMessageUs,
+}: EnterModalProps) {
   useEffect(() => {
     if (open) {
       const prev = document.body.style.overflow
@@ -42,6 +56,11 @@ export function EnterModal({ open, onClose, onHotelInfo, onExtendedTravel, onMes
 
   const handleHotel = () => {
     onHotelInfo?.()
+    onClose()
+  }
+
+  const handleItinerary = () => {
+    onItinerary?.()
     onClose()
   }
 
@@ -84,6 +103,12 @@ export function EnterModal({ open, onClose, onHotelInfo, onExtendedTravel, onMes
                 <HotelIcon sx={{ fontSize: 22 }} />
               </span>
               Hotel Information
+            </button>
+            <button type="button" className={styles.optionBtn} onClick={handleItinerary}>
+              <span className={styles.iconWrap}>
+                <ItineraryIcon sx={{ fontSize: 22 }} />
+              </span>
+              Itinerary
             </button>
             <button type="button" className={styles.optionBtn} onClick={handleTravel}>
               <span className={styles.iconWrap}>

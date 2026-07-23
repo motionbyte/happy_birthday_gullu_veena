@@ -13,7 +13,7 @@ export function ModalFrame({ children, className }: ModalFrameProps) {
     <div className={`${styles.frameWrap} ${className ?? ''}`}>
       <svg
         className={styles.frameSvg}
-        viewBox="0 0 420 520"
+        viewBox="0 0 420 600"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden
@@ -33,14 +33,14 @@ export function ModalFrame({ children, className }: ModalFrameProps) {
           </filter>
         </defs>
         {/* Outer decorative border */}
-        <rect x="8" y="8" width="404" height="504" rx="12" stroke="url(#frameGradient)" strokeWidth="3" fill="none" filter="url(#frameShadow)" className={styles.frameStroke} />
+        <rect x="8" y="8" width="404" height="584" rx="12" stroke="url(#frameGradient)" strokeWidth="3" fill="none" filter="url(#frameShadow)" className={styles.frameStroke} />
         {/* Corner flourishes */}
         <path d="M 24 48 L 48 24 L 72 48 L 48 72 Z" stroke="url(#frameGradient)" strokeWidth="1.5" fill="none" opacity="0.8" className={styles.cornerFlourish} />
         <path d="M 396 48 L 372 24 L 348 48 L 372 72 Z" stroke="url(#frameGradient)" strokeWidth="1.5" fill="none" opacity="0.8" className={styles.cornerFlourish} />
-        <path d="M 396 472 L 372 496 L 348 472 L 372 448 Z" stroke="url(#frameGradient)" strokeWidth="1.5" fill="none" opacity="0.8" className={styles.cornerFlourish} />
-        <path d="M 24 472 L 48 496 L 72 472 L 48 448 Z" stroke="url(#frameGradient)" strokeWidth="1.5" fill="none" opacity="0.8" className={styles.cornerFlourish} />
+        <path d="M 396 552 L 372 576 L 348 552 L 372 528 Z" stroke="url(#frameGradient)" strokeWidth="1.5" fill="none" opacity="0.8" className={styles.cornerFlourish} />
+        <path d="M 24 552 L 48 576 L 72 552 L 48 528 Z" stroke="url(#frameGradient)" strokeWidth="1.5" fill="none" opacity="0.8" className={styles.cornerFlourish} />
         {/* Inner content area (mask) */}
-        <rect x="28" y="28" width="364" height="464" rx="8" fill="url(#frameInner)" className={styles.frameInner} />
+        <rect x="28" y="28" width="364" height="544" rx="8" fill="url(#frameInner)" className={styles.frameInner} />
       </svg>
       <div className={styles.frameContent}>
         {children}

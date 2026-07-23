@@ -47,7 +47,7 @@
 .frameWrap {
   position: relative;
   width: 100%;
-  min-height: 380px;
+  min-height: 460px;
   color: var(--warm);
 }
 
@@ -102,12 +102,12 @@
 .frameContent {
   position: relative;
   z-index: 1;
-  padding: clamp(2rem, 6vw, 2.75rem) clamp(1.5rem, 5vw, 2rem);
+  padding: clamp(2rem, 6vw, 2.75rem) clamp(1.5rem, 5vw, 2rem) clamp(2.25rem, 6vw, 3rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  min-height: 340px;
+  min-height: 420px;
 }
 
 /* Title */

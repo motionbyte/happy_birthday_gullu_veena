@@ -22,6 +22,12 @@ export function HomePage() {
     navigate('/hotel-information')
   }
 
+  const goToItinerary = () => {
+    setModalOpen(false)
+    setMenuOpen(false)
+    navigate('/itinerary')
+  }
+
   const goToExtendedTravel = () => {
     setModalOpen(false)
     setMenuOpen(false)
@@ -41,6 +47,7 @@ export function HomePage() {
         onMenuOpen={() => setMenuOpen(true)}
         onMenuClose={() => setMenuOpen(false)}
         onHotelInfoClick={goToHotelInfo}
+        onItineraryClick={goToItinerary}
         onExtendedTravelClick={() => { setMenuOpen(false) }}
         onMessageUsClick={goToMessageUs}
       />
@@ -56,6 +63,7 @@ export function HomePage() {
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         onHotelInfo={goToHotelInfo}
+        onItinerary={goToItinerary}
         onExtendedTravel={goToExtendedTravel}
         onMessageUs={goToMessageUs}
       />

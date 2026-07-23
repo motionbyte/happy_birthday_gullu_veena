@@ -5,7 +5,13 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import IconButton from '@mui/material/IconButton'
-import { Hotel as HotelIcon, Map as MapIcon, MailOutline as MailIcon, Close as CloseIcon } from '@mui/icons-material'
+import {
+  Hotel as HotelIcon,
+  Map as MapIcon,
+  MailOutline as MailIcon,
+  AutoStories as ItineraryIcon,
+  Close as CloseIcon,
+} from '@mui/icons-material'
 import { Box } from '@mui/material'
 import jaipurImg from '@/assets/jaipur.png'
 
@@ -13,13 +19,21 @@ export type MenuProps = {
   open: boolean
   onClose: () => void
   onHotelInfoClick?: () => void
+  onItineraryClick?: () => void
   onExtendedTravelClick?: () => void
   onMessageUsClick?: () => void
 }
 
 const DRAWER_WIDTH = 280
 
-export function Menu({ open, onClose, onHotelInfoClick, onExtendedTravelClick, onMessageUsClick }: MenuProps) {
+export function Menu({
+  open,
+  onClose,
+  onHotelInfoClick,
+  onItineraryClick,
+  onExtendedTravelClick,
+  onMessageUsClick,
+}: MenuProps) {
   const navigate = useNavigate()
 
   const handleHotelClick = () => {
@@ -27,6 +41,13 @@ export function Menu({ open, onClose, onHotelInfoClick, onExtendedTravelClick, o
     onHotelInfoClick?.()
     navigate('/hotel-information')
   }
+
+  const handleItineraryClick = () => {
+    onClose()
+    onItineraryClick?.()
+    navigate('/itinerary')
+  }
+
   const handleTravelClick = () => {
     onClose()
     onExtendedTravelClick?.()
@@ -113,10 +134,28 @@ export function Menu({ open, onClose, onHotelInfoClick, onExtendedTravelClick, o
             <ListItemText primary="Hotel Information" primaryTypographyProps={{ fontWeight: 500, color: 'var(--warm)' }} />
           </ListItemButton>
           <ListItemButton
+            onClick={handleItineraryClick}
+            sx={{
+              borderRadius: 2,
+              mx: 1,
+              mb: 0.5,
+              color: 'var(--warm)',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 255, 255, 0.45)',
+              },
+            }}
+          >
+            <ListItemIcon sx={{ minWidth: 40 }}>
+              <ItineraryIcon sx={{ color: '#3d5a6e' }} />
+            </ListItemIcon>
+            <ListItemText primary="Itinerary" primaryTypographyProps={{ fontWeight: 500, color: 'var(--warm)' }} />
+          </ListItemButton>
+          <ListItemButton
             onClick={handleTravelClick}
             sx={{
               borderRadius: 2,
               mx: 1,
+              mb: 0.5,
               color: 'var(--warm)',
               '&:hover': {
                 backgroundColor: 'rgba(255, 255, 255, 0.45)',

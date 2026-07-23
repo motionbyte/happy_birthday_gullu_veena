@@ -6,6 +6,7 @@ import { HomePage } from '@/pages/HomePage'
 import { HotelInformationPage } from '@/pages/HotelInformationPage'
 import { ExtendedTravelPage } from '@/pages/ExtendedTravelPage'
 import { MessageUsPage } from '@/pages/MessageUsPage'
+import { ItineraryPage } from '@/pages/ItineraryPage'
 
 const SESSION_KEY = 'site_access'
 
@@ -41,6 +42,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/hotel-information" element={<HotelInformationPage />} />
+          <Route path="/itinerary" element={<ItineraryPage />} />
           <Route path="/extended-travel" element={<ExtendedTravelPage />} />
           <Route path="/message-us" element={<MessageUsPage />} />
         </Routes>

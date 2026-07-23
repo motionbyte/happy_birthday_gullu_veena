@@ -1,0 +1,340 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #c9dae6;
+  perspective: 1400px;
+}
+
+.painting {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.paintingHero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: min(130vh, 1100px);
+  background-size: cover;
+  background-position: center 38%;
+  background-repeat: no-repeat;
+  transform: scale(1.04);
+  animation: heroDrift 16s ease-in-out infinite alternate;
+  filter: saturate(1.05) contrast(1.02);
+  /* Soft dissolve at bottom — no hard cut into the lower wash */
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    #000 0%,
+    #000 42%,
+    rgba(0, 0, 0, 0.85) 58%,
+    rgba(0, 0, 0, 0.45) 72%,
+    rgba(0, 0, 0, 0.15) 86%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    180deg,
+    #000 0%,
+    #000 42%,
+    rgba(0, 0, 0, 0.85) 58%,
+    rgba(0, 0, 0, 0.45) 72%,
+    rgba(0, 0, 0, 0.15) 86%,
+    transparent 100%
+  );
+}
+
+.paintingWash {
+  position: absolute;
+  top: min(28vh, 220px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  /* Long soft fade-in so both paintings melt together */
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.08) 10%,
+    rgba(0, 0, 0, 0.28) 22%,
+    rgba(0, 0, 0, 0.55) 38%,
+    rgba(0, 0, 0, 0.82) 55%,
+    #000 72%,
+    #000 100%
+  );
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.08) 10%,
+    rgba(0, 0, 0, 0.28) 22%,
+    rgba(0, 0, 0, 0.55) 38%,
+    rgba(0, 0, 0, 0.82) 55%,
+    #000 72%,
+    #000 100%
+  );
+}
+
+/* Soft mist band exactly where layers meet */
+.paintingBlend {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: min(38vh, 300px);
+  height: min(55vh, 480px);
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(232, 224, 214, 0.18) 28%,
+      rgba(214, 226, 234, 0.28) 52%,
+      rgba(220, 230, 236, 0.2) 72%,
+      transparent 100%
+    );
+  filter: blur(18px);
+  opacity: 0.95;
+}
+
+.paintingVeil {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 18%, rgba(255, 255, 255, 0.18), transparent 60%),
+    linear-gradient(
+      180deg,
+      rgba(45, 35, 24, 0.22) 0%,
+      rgba(45, 35, 24, 0.08) 28%,
+      rgba(214, 226, 234, 0.12) 48%,
+      rgba(226, 232, 236, 0.28) 68%,
+      rgba(236, 230, 222, 0.42) 100%
+    );
+}
+
+@keyframes heroDrift {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.08) translate3d(0, -1.2%, 0);
+  }
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: min(88vh, 760px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 clamp(1rem, 3vw, 1.5rem) clamp(2rem, 5vw, 3rem);
+}
+
+/* Floating frosted glass — not a solid cream slab */
+.heroContent {
+  position: relative;
+  width: min(620px, 100%);
+  margin-top: clamp(5rem, 12vw, 6.5rem);
+  padding: clamp(1.5rem, 4vw, 2.15rem) clamp(1.35rem, 4vw, 2.1rem);
+  text-align: center;
+  border-radius: 24px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.42) 0%,
+    rgba(250, 248, 245, 0.28) 45%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 28px 60px rgba(45, 35, 24, 0.22),
+    0 8px 20px rgba(45, 35, 24, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    inset 0 -1px 0 rgba(45, 35, 24, 0.06);
+  backdrop-filter: blur(22px) saturate(1.25);
+  -webkit-backdrop-filter: blur(22px) saturate(1.25);
+  transform: translateZ(40px);
+  animation: heroIn 1.05s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.heroContent::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    125deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    transparent 42%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 36px, 0) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 40px) scale(1);
+  }
+}
+
+.brand {
+  position: relative;
+  display: block;
+  height: clamp(48px, 9vw, 68px);
+  width: auto;
+  margin: 0 auto 0.9rem;
+  filter: drop-shadow(0 8px 18px rgba(45, 35, 24, 0.2));
+  animation: brandFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes brandFloat {
+  from {
+    transform: translateY(0);
+    filter: drop-shadow(0 6px 14px rgba(45, 35, 24, 0.16));
+  }
+  to {
+    transform: translateY(-3px);
+    filter: drop-shadow(0 12px 22px rgba(184, 134, 11, 0.28));
+  }
+}
+
+.eyebrow {
+  position: relative;
+  margin: 0 0 0.5rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(0.92rem, 2vw, 1.05rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #5c470e;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.title {
+  position: relative;
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.55rem, 7.5vw, 3.9rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.045em;
+  color: #1f1812;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.5),
+    0 10px 28px rgba(45, 35, 24, 0.18);
+}
+
+.ornament {
+  position: relative;
+  display: block;
+  width: min(200px, 62vw);
+  height: auto;
+  margin: 0.9rem auto 1rem;
+  opacity: 0.92;
+  filter: drop-shadow(0 4px 10px rgba(45, 35, 24, 0.12));
+}
+
+.ornamentDark {
+  display: block;
+  width: min(200px, 62vw);
+  height: auto;
+  margin: 0 auto;
+  opacity: 0.85;
+  filter: drop-shadow(0 4px 10px rgba(45, 35, 24, 0.1));
+}
+
+.lede {
+  position: relative;
+  margin: 0 auto;
+  max-width: 30rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.1rem, 2.4vw, 1.28rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.55;
+  color: #2d2318;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.ledeDates {
+  display: block;
+  margin-top: 0.6rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(0.98rem, 2.1vw, 1.12rem);
+  letter-spacing: 0.05em;
+  color: #5c470e;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  padding: clamp(0.75rem, 2.5vw, 1.5rem) 0 clamp(3rem, 7vw, 4.5rem);
+}
+
+.chapters {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 6.5vw, 4rem);
+}
+
+.chapterBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.chapterOrnament {
+  width: min(180px, 50vw);
+  height: auto;
+  opacity: 0.7;
+  filter: drop-shadow(0 6px 14px rgba(45, 35, 24, 0.12));
+}
+
+.closing {
+  position: relative;
+  max-width: 540px;
+  margin: clamp(2.5rem, 7vw, 4rem) auto 0;
+  padding: clamp(1.35rem, 3.2vw, 1.85rem) clamp(1.25rem, 4vw, 2rem);
+  text-align: center;
+  border-radius: 22px;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(250, 248, 245, 0.26) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow:
+    0 24px 48px rgba(45, 35, 24, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  transform: translateZ(20px);
+}
+
+.closingText {
+  margin: 0.85rem 0 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.15rem, 2.6vw, 1.4rem);
+  font-style: italic;
+  line-height: 1.6;
+  color: #2d2318;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paintingHero,
+  .brand,
+  .heroContent {
+    animation: none;
+  }
+}
